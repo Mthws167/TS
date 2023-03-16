@@ -18,24 +18,23 @@ public class Teste {
 					try {
 						numeros[i] = input.nextInt();
 					} catch (InputMismatchException e) {
-						System.out.println("Conteúdo inválido do arquivo.");
+						System.out.println("\n Conteúdo inválido do arquivo.");
 						return;
 					}
 					if (numeros[i] > 0 && numeros[i] < 65530) {
 						continue;
 					} else {
-						System.out.print("Tamanho inválido do vetor.");
+						System.out.print("\n Tamanho inválido do vetor.");
 						return;
 					}
 				}
 
 				if (numeros.length != quantidadeNumeros) {
-					System.out.println("Número de elementos divergente do informado.");
+					System.out.println("\n Número de elementos divergente do informado.");
 					return;
 				}
 
-				System.out.print("\n\n");
-				System.out.print("Números desordenados:  \n");
+				System.out.print("\n Números desordenados:  \n");
 				for (int i = 0; i < quantidadeNumeros; i++) {
 					if (i == quantidadeNumeros - 1) {
 						System.out.print(numeros[i] + ".");
@@ -56,11 +55,11 @@ public class Teste {
 				}
 
 			} else {
-				System.out.print("Quantidade inválida!");
+				System.out.print("\n Quantidade inválida!");
 				return;
 			}
 		} catch (InputMismatchException e) {
-			System.out.println("Conteúdo inválido do arquivo.");
+			System.out.println("\n Conteúdo inválido do arquivo.");
 			return;
 		}
 
