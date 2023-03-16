@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Teste {
@@ -13,15 +14,26 @@ public class Teste {
 
 			for (int i = 0; i < quantidadeNumeros; i++) {
 				System.out.print("Digite o número #" + (i + 1) + ": ");
-				numeros[i] = input.nextInt();
+				try {
+					numeros[i] = input.nextInt();
+				} catch (InputMismatchException e) {
+					System.out.println("Conteúdo inválido do arquivo.");
+					return;
+				}
 				if (numeros[i] > 0 && numeros[i] < 65530) {
 					continue;
 				} else {
-					System.out.print("Tamanho inválido do vetor!");
+					System.out.print("Tamanho inválido do vetor.");
 					return;
 				}
 			}
-
+			
+			if (numeros.length != quantidadeNumeros) {
+	            System.out.println("Número de elementos divergente do informado.");
+	            return;
+	        }
+			
+			System.out.print("\n\n");
 			System.out.print("Números desordenados:  \n");
 			for (int i = 0; i < quantidadeNumeros; i++) {
 				if (i == quantidadeNumeros - 1) {
@@ -43,7 +55,7 @@ public class Teste {
 			}
 
 		} else {
-			System.out.print("Número de elementos divergente do informado!");
+			System.out.print("Quantidade inválida!");
 			return;
 		}
 
